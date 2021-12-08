@@ -79,3 +79,21 @@ return object;
 }
 
 console.log(shoppingList(string2))
+
+// Write a function mapObject that takes two parameters: an object obj and a function fn.
+// mapObject should return a new object whose keys are the same as those of obj, and whose values are the result of calling fn with the values of obj.
+
+function mapObject(obj, fn) {
+
+  //initialise empty object
+  let obj2 = {}
+
+  //iterates through object
+  for (i in obj){
+
+  //sets key and value to obj2 based on obj, with function fn exectued on the value 
+  obj2[i] = fn(obj[i])
+  }
+  return obj2
+  }
+console.log(mapObject({ a: 1, b: 2 }, (n) => n + 2));
